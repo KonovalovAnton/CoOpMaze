@@ -4,8 +4,11 @@ using System.Collections;
 [RequireComponent(typeof(CharacterController))]
 public class RobotController : MonoBehaviour
 {
-    [SerializeField]
-    Camera localCamera;
+    [SerializeField] Camera localCamera;
+    [SerializeField] Camera shootCam;
+
+    public Camera ActiveCamera { get; private set; }
+
     public float ForwardSpeed;
     public float BackwardSpeed;
     public float StrafeSpeed;
@@ -21,6 +24,27 @@ public class RobotController : MonoBehaviour
     Vector3 m_CurrentMovement;
     float m_CurrentTurnSpeed;
 
+    bool shooting;
+
+    public void SwitchToShoot(bool enable)
+    {
+        shooting = enable;
+        if(enable)
+        {
+            shootCam.gameObject.SetActive(true);
+            localCamera.gameObject.SetActive(false);
+            RotateSpeed /= 2;
+            ActiveCamera = shootCam;
+        }
+        else
+        {
+            shootCam.gameObject.SetActive(false);
+            localCamera.gameObject.SetActive(true);
+            RotateSpeed *= 2;
+            ActiveCamera = localCamera;
+        }
+    } 
+
     void Start()
     {
         m_CharacterController = GetComponent<CharacterController>();
@@ -30,6 +54,7 @@ public class RobotController : MonoBehaviour
         if (m_PhotonView.isMine)
         {
             localCamera.gameObject.SetActive(true);
+            ActiveCamera = localCamera;
         }
     }
 
@@ -37,17 +62,20 @@ public class RobotController : MonoBehaviour
     {
         if (m_PhotonView.isMine == true)
         {
-            ResetSpeedValues();
-
             UpdateRotateMovement();
+            if(!shooting)
+            {
+                ResetSpeedValues();
 
-            UpdateForwardMovement();
-            UpdateBackwardMovement();
-            UpdateStrafeMovement();
 
-            MoveCharacterController();
-            ApplyGravityToCharacterController();
+                UpdateForwardMovement();
+                UpdateBackwardMovement();
+                UpdateStrafeMovement();
 
+                MoveCharacterController();
+                ApplyGravityToCharacterController();
+
+            }
             ApplySynchronizedValues();
         }
 
@@ -152,17 +180,17 @@ public class RobotController : MonoBehaviour
             transform.Rotate(0.0f, RotateSpeed * Time.deltaTime, 0.0f);
         }
 
-        float rotX = localCamera.transform.localEulerAngles.x;
+        float rotX = ActiveCamera.transform.localEulerAngles.x;
         rotX = (rotX > 180) ? rotX - 360 : rotX;
         if (Input.GetAxis("Mouse Y") < -0.1f && rotX > - 15)
         {
             m_CurrentTurnSpeed = -RotateSpeed;
-            localCamera.transform.RotateAround (transform.position, transform.right, -RotateSpeed * Time.deltaTime);
+            ActiveCamera.transform.RotateAround (transform.position, transform.right, -RotateSpeed * Time.deltaTime);
         }
         if (Input.GetAxis("Mouse Y") > 0.1f && rotX < 60)
         {
             m_CurrentTurnSpeed = RotateSpeed;
-            localCamera.transform.RotateAround(transform.position, transform.right, RotateSpeed * Time.deltaTime);
+            ActiveCamera.transform.RotateAround(transform.position, transform.right, RotateSpeed * Time.deltaTime);
         }
     }
 }
