@@ -1822,8 +1822,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114197071702223664}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114425764659399864
@@ -1854,7 +1854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9d7e7efbcef8547adb0d66e9b07a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localCam: {fileID: 20826565129205566}
   laserR: {fileID: 1415446576187778}
   laserL: {fileID: 1589770451362072}
 --- !u!120 &120029287698036724
