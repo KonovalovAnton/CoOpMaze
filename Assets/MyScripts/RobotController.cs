@@ -55,6 +55,7 @@ public class RobotController : MonoBehaviour
         {
             localCamera.gameObject.SetActive(true);
             ActiveCamera = localCamera;
+            Cursor.visible = false;
         }
     }
 

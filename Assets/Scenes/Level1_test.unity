@@ -350,3 +350,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 34.03, y: 160.8, z: 0}
+--- !u!1001 &1808204746
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4403814829886814, guid: 56cd1341558ee1648a3a4b14e45b86ac, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 23.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403814829886814, guid: 56cd1341558ee1648a3a4b14e45b86ac, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403814829886814, guid: 56cd1341558ee1648a3a4b14e45b86ac, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 48.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403814829886814, guid: 56cd1341558ee1648a3a4b14e45b86ac, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403814829886814, guid: 56cd1341558ee1648a3a4b14e45b86ac, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403814829886814, guid: 56cd1341558ee1648a3a4b14e45b86ac, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403814829886814, guid: 56cd1341558ee1648a3a4b14e45b86ac, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403814829886814, guid: 56cd1341558ee1648a3a4b14e45b86ac, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227504302565308, guid: 56cd1341558ee1648a3a4b14e45b86ac,
+        type: 2}
+      propertyPath: viewIdField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227504302565308, guid: 56cd1341558ee1648a3a4b14e45b86ac,
+        type: 2}
+      propertyPath: instantiationId
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 56cd1341558ee1648a3a4b14e45b86ac, type: 2}
+  m_IsPrefabParent: 0
