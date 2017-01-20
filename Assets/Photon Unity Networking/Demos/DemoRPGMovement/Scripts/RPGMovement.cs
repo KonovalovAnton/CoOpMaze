@@ -4,7 +4,6 @@ using System.Collections;
 [RequireComponent( typeof( CharacterController ) )]
 public class RPGMovement : MonoBehaviour
 {
-    [SerializeField] Camera localCamera;
     public float ForwardSpeed;
     public float BackwardSpeed;
     public float StrafeSpeed;
@@ -26,10 +25,6 @@ public class RPGMovement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_PhotonView = GetComponent<PhotonView>();
         m_TransformView = GetComponent<PhotonTransformView>();
-        if(m_PhotonView.isMine)
-        {
-            localCamera.gameObject.SetActive(true);
-        }
     }
 
     void Update()
