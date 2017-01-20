@@ -362,8 +362,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerId: 0
   group: 0
+  OwnerShipWasTransfered: 0
   prefixBackup: -1
-  observed: {fileID: 0}
   synchronization: 0
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
@@ -372,6 +372,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 1
   instantiationId: 1
+  currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &23
 MonoBehaviour:
@@ -472,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResourceTypeToLoad: 1
-  ResourceToLoad: 687474703a2f2f646f632e6578697467616d65732e636f6d2f70686f746f6e2d636c6f75642f4d6172636f5f506f6c6f5f5475746f7269616c
+  ResourceToLoad: http://doc.exitgames.com/photon-cloud/Marco_Polo_Tutorial
 --- !u!1 &1099269470
 GameObject:
   m_ObjectHideFlags: 0

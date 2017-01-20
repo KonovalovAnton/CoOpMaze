@@ -825,8 +825,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3b5dcba7bf9114cb13fc59e0a71f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPosition: {fileID: 0}
-  PositionOffset: 0
+  SpawnPosition1: {fileID: 0}
+  SpawnPosition2: {fileID: 0}
   PrefabsToInstantiate:
   - {fileID: 100000, guid: ae31d748c0bbc05448a13e58f8861963, type: 2}
 --- !u!114 &307496548

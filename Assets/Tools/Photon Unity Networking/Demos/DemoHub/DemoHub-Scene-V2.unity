@@ -841,16 +841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &203501716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,16 +1023,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &223430524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1339,16 +1323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &260261145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2908,16 +2884,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &598418036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3475,16 +3443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &736309009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4079,16 +4039,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &855476141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4473,16 +4425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &954629822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4642,16 +4586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &993012747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4912,16 +4848,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1013614463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5100,16 +5028,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1070167235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5257,16 +5177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1092661499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5631,16 +5543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1187450195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5799,16 +5703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1286520549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6947,16 +6843,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1602607502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7372,16 +7260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1739441515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8651,16 +8531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  HoverColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  HoverColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &2091525289
 MonoBehaviour:
   m_ObjectHideFlags: 0

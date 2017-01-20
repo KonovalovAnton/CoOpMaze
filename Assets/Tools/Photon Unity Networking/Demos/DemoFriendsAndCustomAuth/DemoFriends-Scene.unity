@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetGameObject: {fileID: 1342840820}
-  TargetMethod: 536574537461746541757468496e707574
+  TargetMethod: SetStateAuthInput
 --- !u!1 &282236088
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetGameObject: {fileID: 1342840820}
-  TargetMethod: 536574537461746541757468496e707574
+  TargetMethod: SetStateAuthInput
 --- !u!1 &908903461
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GuiRect:
+    serializedVersion: 2
     x: 0
     y: 0
     width: 0
@@ -745,6 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GuiRect:
+    serializedVersion: 2
     x: 640
     y: 100
     width: 640
@@ -762,6 +764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GuiRect:
+    serializedVersion: 2
     x: 0
     y: 0
     width: 0
@@ -1019,7 +1022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetGameObject: {fileID: 1342840820}
-  TargetMethod: 436f6e6e656374576974684e69636b6e616d65
+  TargetMethod: ConnectWithNickname
 --- !u!1 &1868995777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,7 +1132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetGameObject: {fileID: 1342840820}
-  TargetMethod: 436f6e6e656374576974684e69636b6e616d65
+  TargetMethod: ConnectWithNickname
 --- !u!1 &1888583506
 GameObject:
   m_ObjectHideFlags: 0
