@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserController : MonoBehaviour {
+public class LaserController : MonoBehaviour//, IPunObservable
+{
 
     [SerializeField] GameObject laserR;
     [SerializeField] GameObject laserL;
@@ -13,6 +15,7 @@ public class LaserController : MonoBehaviour {
     LineRenderer lineL;
 
     RobotController robot;
+    RaycastHit info;
 
     Vector3[] positionsR;
     Vector3[] positionsL;
@@ -29,40 +32,75 @@ public class LaserController : MonoBehaviour {
     }
 
     bool shooting = false;
+    bool pressed = false;
+
+    private void EnableLaser(bool enable)
+    {
+        laserR.SetActive(enable);
+        laserL.SetActive(enable);
+        shooting = enable;
+        if(pv.isMine)
+        {
+            robot.SwitchToShoot(enable);
+        }
+    }
 
 	void Update () {
         if(pv.isMine)
         {
-            RaycastHit info;
-            if(Input.GetMouseButton(0))
+            pressed = Input.GetMouseButton(0);
+            if (pressed)
             {
-                if(!shooting)
-                {
-                    laserR.SetActive(true);
-                    laserL.SetActive(true);
-
-                    robot.SwitchToShoot(true);
-                    shooting = true;
-                }
-
-                if(Physics.Raycast(robot.ActiveCamera.transform.position, robot.ActiveCamera.transform.forward, out info))
-                {
-                    positionsR[0] = laserR.transform.position;
-                    positionsR[1] = info.point;
-                    lineR.SetPositions(positionsR);
-
-                    positionsL[0] = laserL.transform.position;
-                    positionsL[1] = info.point;
-                    lineL.SetPositions(positionsL);
-                }
-            }
-            else if(shooting)
-            {
-                laserR.SetActive(false);
-                laserL.SetActive(false);
-                robot.SwitchToShoot(false);
-                shooting = false;
+                RaycastCheck();
             }
         }
+        HandleLasers();
+           
 	}
+
+    void RaycastCheck()
+    {
+        if (Physics.Raycast(robot.ActiveCamera.transform.position, robot.ActiveCamera.transform.forward, out info))
+        {
+            positionsR[0] = laserR.transform.position;
+            positionsR[1] = info.point;
+
+            positionsL[0] = laserL.transform.position;
+            positionsL[1] = info.point;
+        }
+    }
+
+    void HandleLasers()
+    {
+        if (!shooting && pressed)
+        {
+            EnableLaser(true);
+        }
+        else if (shooting && !pressed)
+        {
+            EnableLaser(false);
+        }
+
+        if (pressed)
+        {
+            lineR.SetPositions(positionsR);
+            lineL.SetPositions(positionsL);
+        }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            stream.SendNext(pressed);
+            stream.SendNext(positionsR);
+            stream.SendNext(positionsL);
+        }
+        else
+        {
+            pressed = (bool)stream.ReceiveNext();
+            positionsR = (Vector3[])stream.ReceiveNext();
+            positionsL = (Vector3[])stream.ReceiveNext();
+        }
+    }
 }
