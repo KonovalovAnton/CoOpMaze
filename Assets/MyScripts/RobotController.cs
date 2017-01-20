@@ -60,7 +60,7 @@ public class RobotController : MonoBehaviour
 
     void Update()
     {
-        if (m_PhotonView.isMine == true)
+        if (m_PhotonView.isMine)
         {
             UpdateRotateMovement();
             if(!shooting)
