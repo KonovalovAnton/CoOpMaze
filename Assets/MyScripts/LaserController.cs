@@ -8,6 +8,7 @@ public class LaserController : MonoBehaviour//, IPunObservable
 
     [SerializeField] GameObject laserR;
     [SerializeField] GameObject laserL;
+    [SerializeField] float chargeSpeed = 1;
 
     PhotonView pv;
 
@@ -67,6 +68,11 @@ public class LaserController : MonoBehaviour//, IPunObservable
 
             positionsL[0] = laserL.transform.position;
             positionsL[1] = info.point;
+            CapasitorScript cap = info.transform.gameObject.GetComponent<CapasitorScript>();
+            if(cap != null)
+            {
+                cap.Charge(chargeSpeed * Time.deltaTime);
+            }
         }
     }
 
