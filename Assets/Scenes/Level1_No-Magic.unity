@@ -220,6 +220,11 @@ Prefab:
       propertyPath: instantiationId
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114060765460694076, guid: e39d6f025ca6b4b4d929b6f5f0f1691d,
+        type: 2}
+      propertyPath: m_PositionModel.SynchronizeEnabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e39d6f025ca6b4b4d929b6f5f0f1691d, type: 2}
   m_IsPrefabParent: 0
