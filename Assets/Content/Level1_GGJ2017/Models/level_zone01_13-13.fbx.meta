@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 478bc8ef172c34f4c8cab1451762d5c3
-timeCreated: 1484991835
+guid: c1ae0a291b3b9364fb084f6c82edeac6
+timeCreated: 1484994415
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,9 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: door_bridge_half
-    7400000: Default Take
-    9500000: //RootNode
+    4300000: level_zone01_13-13
   materials:
     importMaterials: 1
     materialName: 0
@@ -74,7 +72,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
