@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserController : MonoBehaviour//, IPunObservable
+public class LaserController : MonoBehaviour, IPunObservable
 {
 
     [SerializeField] GameObject laserR;

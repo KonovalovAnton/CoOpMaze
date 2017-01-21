@@ -51,7 +51,7 @@ public class ButtonScript : MonoBehaviour, IPunObservable, IActivate {
     }
 }
 
-interface IActivate
+public interface IActivate
 {
     bool IsActivated();
 }
