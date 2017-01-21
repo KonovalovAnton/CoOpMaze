@@ -191,8 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a85c07285e4cb64cb2072d73ce7be6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activators:
-  - {fileID: 0}
+  activators: []
   open: {fileID: 4287098070590150}
   closed: {fileID: 4116318424928136}
   speed: 1
