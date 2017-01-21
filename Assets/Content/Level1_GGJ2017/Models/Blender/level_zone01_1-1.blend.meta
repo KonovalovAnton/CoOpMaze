@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d626b1f38924ddc40bd2dd18cc2b1449
-timeCreated: 1484993623
+guid: 91e6d4b81238d5445a4e79b28ca9046d
+timeCreated: 1484991836
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,8 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: door_bridge_half
+    4300000: basic-block_1-1
+    4300002: level_zone01_1-1
     7400000: Default Take
     9500000: //RootNode
   materials:
