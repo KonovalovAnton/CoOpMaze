@@ -1841,6 +1841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserR: {fileID: 1415446576187778}
   laserL: {fileID: 1589770451362072}
+  chargeSpeed: 1
 --- !u!120 &120029287698036724
 LineRenderer:
   m_ObjectHideFlags: 1
