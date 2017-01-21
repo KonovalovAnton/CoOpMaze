@@ -1,10 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CapasitorScript : MonoBehaviour {
+public class CapasitorScript : MonoBehaviour, IActivate {
 
-    [SerializeField] float charge = 0;
+    [SerializeField] float activateAmount;
+    [SerializeField] float maxAmount;
+    [SerializeField] float charge;
+    [SerializeField] float dischargeSpeed;
+
+    double currentTime;
     PhotonView pv;
 
     public void Charge(float deltaCharge)
@@ -16,10 +22,34 @@ public class CapasitorScript : MonoBehaviour {
     public void ChargeCapasitor(float deltaCharge)
     {
         charge += deltaCharge;
+        if(charge < 0)
+        {
+            charge = 0;
+        }
+
+        if(charge > maxAmount)
+        {
+            charge = maxAmount;
+        }
     }
 
-	// Use this for initialization
-	void Start () {
+    public bool IsActivated()
+    {
+        return charge - activateAmount > 0;
+    }
+
+    public void Update()
+    {
+        if(pv.isMine)
+        {
+            pv.RPC("ChargeCapasitor", PhotonTargets.AllViaServer, -dischargeSpeed * Time.deltaTime);
+            currentTime = PhotonNetwork.time;
+        }
+    }
+
+    void Start ()
+    {
         pv = GetComponent<PhotonView>();
-	}
+        currentTime = PhotonNetwork.time;
+    }
 }

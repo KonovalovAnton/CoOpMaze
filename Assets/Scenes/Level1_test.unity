@@ -399,6 +399,16 @@ Prefab:
       propertyPath: instantiationId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114248009989887634, guid: ee4b567f4e0f3ce42bd42660e5bcef0e,
+        type: 2}
+      propertyPath: activateAmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114248009989887634, guid: ee4b567f4e0f3ce42bd42660e5bcef0e,
+        type: 2}
+      propertyPath: maxAmount
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee4b567f4e0f3ce42bd42660e5bcef0e, type: 2}
   m_IsPrefabParent: 0

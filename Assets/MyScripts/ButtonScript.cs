@@ -3,10 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonScript : MonoBehaviour, IPunObservable {
-
-    public bool Activated { get { return active; } }
-
+public class ButtonScript : MonoBehaviour, IPunObservable, IActivate {
+    
     [SerializeField] bool active = false;
     [SerializeField] bool stay = false;
 
@@ -46,4 +44,14 @@ public class ButtonScript : MonoBehaviour, IPunObservable {
             active = false;
         }
     }
+
+    public bool IsActivated()
+    {
+        return active;
+    }
+}
+
+interface IActivate
+{
+    bool IsActivated();
 }
