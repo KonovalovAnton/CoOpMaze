@@ -10,6 +10,8 @@ public class ButtonScript : MonoBehaviour, IPunObservable, IActivate {
 
     PhotonView pv;
 
+    [SerializeField] Transform button_model;
+
     void Start()
     {
         pv = GetComponent<PhotonView>();
@@ -32,8 +34,9 @@ public class ButtonScript : MonoBehaviour, IPunObservable, IActivate {
         RobotController r = col.GetComponent<RobotController>();
         if(r!= null && pv.isMine)
         {
-            active = true;   
+            active = true;
         }
+        button_model.Translate(-transform.forward * .2f);
     }
 
     void OnTriggerExit(Collider col)
@@ -42,6 +45,10 @@ public class ButtonScript : MonoBehaviour, IPunObservable, IActivate {
         if (r != null && stay && pv.isMine)
         {
             active = false;
+        }
+        if (stay)
+        {
+            button_model.Translate(transform.forward * .2f);
         }
     }
 
