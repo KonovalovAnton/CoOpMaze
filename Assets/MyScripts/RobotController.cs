@@ -183,15 +183,15 @@ public class RobotController : MonoBehaviour
 
         float rotX = ActiveCamera.transform.localEulerAngles.x;
         rotX = (rotX > 180) ? rotX - 360 : rotX;
-        if (Input.GetAxis("Mouse Y") < -0.1f && rotX > - 15)
+        if (Input.GetAxis("Mouse Y") < -0.1f && rotX < 75/*rotX > - 25*/)
         {
-            m_CurrentTurnSpeed = -RotateSpeed;
-            ActiveCamera.transform.RotateAround (transform.position, transform.right, -RotateSpeed * Time.deltaTime);
+            //m_CurrentTurnSpeed = RotateSpeed;
+            ActiveCamera.transform.RotateAround(transform.position, transform.right, RotateSpeed * Time.deltaTime / 2);
         }
-        if (Input.GetAxis("Mouse Y") > 0.1f && rotX < 60)
+        if (Input.GetAxis("Mouse Y") > 0.1f && rotX > -25/*rotX < 75*/)
         {
-            m_CurrentTurnSpeed = RotateSpeed;
-            ActiveCamera.transform.RotateAround(transform.position, transform.right, RotateSpeed * Time.deltaTime);
+            //m_CurrentTurnSpeed = -RotateSpeed;
+            ActiveCamera.transform.RotateAround (transform.position, transform.right, -RotateSpeed * Time.deltaTime / 2);
         }
     }
 }
