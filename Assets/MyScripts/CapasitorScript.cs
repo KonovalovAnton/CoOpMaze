@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class CapasitorScript : MonoBehaviour, IActivate {
 
-    [SerializeField] float activateAmount;
-    [SerializeField] float maxAmount;
-    [SerializeField] float charge;
-    [SerializeField] float dischargeSpeed;
+    [SerializeField]
+    public float activateAmount;
+    [SerializeField]
+    public float maxAmount;
+    [SerializeField]
+    public float charge;
+    [SerializeField]
+    float dischargeSpeed;
 
     double currentTime;
     PhotonView pv;
