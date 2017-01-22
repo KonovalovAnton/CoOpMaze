@@ -1,29 +1,17 @@
 fileFormatVersion: 2
-guid: 7b8a1aa1cfe464c7099ec6ed7b80166c
-timeCreated: 1465813241
+guid: 8057d324d26c7c94eae023046a7417ce
+timeCreated: 1485071192
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Camera
-    100004: Circle.438
-    100006: Cube
-    100008: Lamp
     400000: //RootNode
-    400002: Camera
-    400004: Circle.438
-    400006: Cube
-    400008: Lamp
     2300000: //RootNode
-    2300002: Circle.438
-    2300004: Cube
     3300000: //RootNode
-    3300002: Circle.438
-    3300004: Cube
-    4300000: Circle.438
-    4300002: Cube
-    4300004: charger
+    4300000: level_zone01_basic-3-3
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -84,9 +72,9 @@ ModelImporter:
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
