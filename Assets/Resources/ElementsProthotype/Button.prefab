@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1491521177494038}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 9.28, y: 0, z: -17.928598}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 99.99991, z: 99.99991}
   m_Children:
   - {fileID: 4129686048345840}
@@ -300,3 +300,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   stay: 0
+  button_model: {fileID: 0}
