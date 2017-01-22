@@ -19527,12 +19527,12 @@ Prefab:
     - target: {fileID: 114227504302565308, guid: 56cd1341558ee1648a3a4b14e45b86ac,
         type: 2}
       propertyPath: viewIdField
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114227504302565308, guid: 56cd1341558ee1648a3a4b14e45b86ac,
         type: 2}
       propertyPath: instantiationId
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56cd1341558ee1648a3a4b14e45b86ac, type: 2}
