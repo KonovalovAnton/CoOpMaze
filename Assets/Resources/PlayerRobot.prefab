@@ -1877,8 +1877,8 @@ MonoBehaviour:
   - {fileID: 114197071702223664}
   - {fileID: 114701665214675930}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 8
+  instantiationId: 8
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114425764659399864
@@ -1925,7 +1925,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9f1129974630774409da4274a848e31e, type: 2}
+  - {fileID: 2100000, guid: ddeac083df111844d880b5dbeaad1f5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1967,7 +1967,7 @@ LineRenderer:
         rgba: 4278190335
       key1:
         serializedVersion: 2
-        rgba: 2972067583
+        rgba: 4280690431
       key2:
         serializedVersion: 2
         rgba: 0
@@ -2002,7 +2002,7 @@ LineRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
+      m_Mode: 1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -2023,7 +2023,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9f1129974630774409da4274a848e31e, type: 2}
+  - {fileID: 2100000, guid: ddeac083df111844d880b5dbeaad1f5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2065,10 +2065,10 @@ LineRenderer:
         rgba: 4278190335
       key1:
         serializedVersion: 2
-        rgba: 2972067583
+        rgba: 4278190335
       key2:
         serializedVersion: 2
-        rgba: 0
+        rgba: 16777215
       key3:
         serializedVersion: 2
         rgba: 0
@@ -2086,7 +2086,7 @@ LineRenderer:
         rgba: 0
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -2100,7 +2100,7 @@ LineRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
+      m_Mode: 1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
