@@ -24,7 +24,7 @@ public class OnJoinedInstantiate : MonoBehaviour
                 {
                     spawnPos = this.SpawnPosition2.position;
                 }
-                PhotonNetwork.Instantiate(o.name, spawnPos, Quaternion.identity, 0);
+                PhotonNetwork.Instantiate(o.name, spawnPos, SpawnPosition1.rotation, 0);
             }
         }
     }
