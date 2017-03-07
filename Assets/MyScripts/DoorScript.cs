@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour {
 
-    static float delta = 0.1f;
-
+    static float delta = 0.2f;
+    
+    public bool elevator;
     public GameObject[] activators;
     [SerializeField] Transform open;
     [SerializeField] Transform closed;
     [SerializeField] float speed;
-	
+
     bool ToOpen()
     {
         if(activators == null || activators.Length == 0)

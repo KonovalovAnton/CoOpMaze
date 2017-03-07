@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 [RequireComponent(typeof(CharacterController))]
 public class RobotController : MonoBehaviour
@@ -25,6 +26,9 @@ public class RobotController : MonoBehaviour
     float m_CurrentTurnSpeed;
 
     bool shooting;
+
+    bool onElevator;
+    float lastT;
 
     public void SwitchToShoot(bool enable)
     {
@@ -63,6 +67,7 @@ public class RobotController : MonoBehaviour
     {
         if (m_PhotonView.isMine)
         {
+            UpdateElevatorParenting();
             UpdateRotateMovement();
             if(!shooting)
             {
@@ -81,6 +86,51 @@ public class RobotController : MonoBehaviour
         }
 
         UpdateAnimation();
+    }
+
+    [PunRPC]
+    void SetParenting(int id = -1)
+    {
+        if(id == -1)
+        {
+            transform.parent = null;
+        }
+        else
+        {
+            transform.parent = PhotonView.Find(id).transform;
+        }
+    }
+
+    private void UpdateElevatorParenting()
+    {
+        RaycastHit info;
+        bool shoot = Physics.Raycast(transform.position, Vector3.down, out info);
+        if(shoot)
+        {
+            DoorScript d = info.transform.gameObject.GetComponentInParent<DoorScript>();
+            if (d!= null && d.elevator )
+            {
+                lastT = Time.time;
+                if(!onElevator)
+                {
+                    onElevator = true;
+                    m_PhotonView.RPC("SetParenting", PhotonTargets.AllViaServer, d.GetComponent<PhotonView>().viewID);
+                }
+            }
+            else
+            {
+                if (onElevator && Time.time - lastT > 0.1)
+                {
+                    onElevator = false;
+                    m_PhotonView.RPC("SetParenting", PhotonTargets.AllViaServer, -1);
+                }
+            }
+        }
+        else if(onElevator && Time.time - lastT > 0.1)
+        {
+            onElevator = false;
+            transform.parent = null;
+        }
     }
 
     void UpdateAnimation()
