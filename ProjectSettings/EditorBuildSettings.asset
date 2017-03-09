@@ -55,7 +55,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1_test.unity
   - enabled: 0
     path: Assets/Scenes/Level1_GGJ2017_test.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/JamMenu.unity
   - enabled: 1
     path: Assets/Scenes/Level1_No-Magic.unity
+  - enabled: 0
+    path: Assets/PUNVoice/DemoVoice/DemoVoice-PushToTalk-Scene.unity

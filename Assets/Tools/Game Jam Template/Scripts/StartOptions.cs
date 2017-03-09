@@ -24,6 +24,7 @@ public class StartOptions : MonoBehaviour {
 	private float fastFadeIn = .01f;									//Very short fade time (10 milliseconds) to start playing music immediately without a click/glitch
 	private ShowPanels showPanels;										//Reference to ShowPanels script on UI GameObject, to show and hide panels
 
+    public static bool spectator;
 	
 	void Awake()
 	{
@@ -35,33 +36,45 @@ public class StartOptions : MonoBehaviour {
 	}
 
 
-	public void StartButtonClicked()
+    public void SpectateButtonClicked()
+    {
+        spectator = true;
+        LoadGame();
+    }
+
+
+    public void StartButtonClicked()
 	{
-		//If changeMusicOnStart is true, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic, using length of fadeColorAnimationClip as time. 
-		//To change fade time, change length of animation "FadeToColor"
-		if (changeMusicOnStart) 
-		{
-			playMusic.FadeDown(fadeColorAnimationClip.length);
-		}
-
-		//If changeScenes is true, start fading and change scenes halfway through animation when screen is blocked by FadeImage
-		if (changeScenes) 
-		{
-			//Use invoke to delay calling of LoadDelayed by half the length of fadeColorAnimationClip
-			Invoke ("LoadDelayed", fadeColorAnimationClip.length * .5f);
-
-			//Set the trigger of Animator animColorFade to start transition to the FadeToOpaque state.
-			animColorFade.SetTrigger ("fade");
-		} 
-
-		//If changeScenes is false, call StartGameInScene
-		else 
-		{
-			//Call the StartGameInScene function to start game without loading a new scene.
-			StartGameInScene();
-		}
-
+        spectator = false;
+        LoadGame();
 	}
+
+    void LoadGame()
+    {
+        //If changeMusicOnStart is true, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic, using length of fadeColorAnimationClip as time. 
+        //To change fade time, change length of animation "FadeToColor"
+        if (changeMusicOnStart)
+        {
+            playMusic.FadeDown(fadeColorAnimationClip.length);
+        }
+
+        //If changeScenes is true, start fading and change scenes halfway through animation when screen is blocked by FadeImage
+        if (changeScenes)
+        {
+            //Use invoke to delay calling of LoadDelayed by half the length of fadeColorAnimationClip
+            Invoke("LoadDelayed", fadeColorAnimationClip.length * .5f);
+
+            //Set the trigger of Animator animColorFade to start transition to the FadeToOpaque state.
+            animColorFade.SetTrigger("fade");
+        }
+
+        //If changeScenes is false, call StartGameInScene
+        else
+        {
+            //Call the StartGameInScene function to start game without loading a new scene.
+            StartGameInScene();
+        }
+    }
 
     void OnEnable()
     {
