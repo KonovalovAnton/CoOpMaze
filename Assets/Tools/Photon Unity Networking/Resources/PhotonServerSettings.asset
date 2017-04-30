@@ -39,6 +39,6 @@ MonoBehaviour:
   - RequestForPickupItems
   - RequestForPickupTimes
   - TaggedPlayer
-  - ChargeCapasitor
   - SetParenting
+  - ChargeCapasitor
   DisableAutoOpenWizard: 1

@@ -15,14 +15,14 @@ public class SpectatorMovement : MonoBehaviour {
     void Start()
     {
         pv = GetComponent<PhotonView>();
-        if(pv.isMine)
+        if(pv.isMine || !PhotonNetwork.connected)
         {
             GetComponentInChildren<Camera>().enabled = true;
         }
     }
     void Update()
     {
-        if(pv.isMine)
+        if(pv.isMine || !PhotonNetwork.connected)
         {
             rotationX += Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
             rotationY += Input.GetAxis("Mouse Y") * cameraSensitivity * Time.deltaTime;

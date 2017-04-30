@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonScript : MonoBehaviour, IPunObservable, IActivate {
-    
+
+    public static Dictionary<int, ButtonScript> buttons = new Dictionary<int, ButtonScript>();
+
     [SerializeField] bool active = false;
     [SerializeField] bool stay = false;
 
@@ -15,6 +17,7 @@ public class ButtonScript : MonoBehaviour, IPunObservable, IActivate {
     void Start()
     {
         pv = GetComponent<PhotonView>();
+        buttons.Add(pv.viewID, this);
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -52,13 +55,46 @@ public class ButtonScript : MonoBehaviour, IPunObservable, IActivate {
         }
     }
 
+    bool cache = false;
+    private void Update()
+    {
+        if(PhotonNetwork.connected && active != cache)
+        {
+            Log();
+            cache = active;
+        }
+    }
+
+    public void SetActive(bool act)
+    {
+        active = act;
+    }
+
     public bool IsActivated()
     {
         return active;
+    }
+
+    public void Log()
+    {
+        ButtonActivation p = new ButtonActivation()
+        {
+            id = pv.viewID,
+            active = IsActivated(),
+        };
+        string log = JsonUtility.ToJson(p);
+        GlobalLogSaver.Instance.AddLogString(log);
     }
 }
 
 public interface IActivate
 {
     bool IsActivated();
+}
+
+class ButtonActivation : LogObject
+{
+    public int id;
+    public bool active;
+    public ButtonActivation() : base("ButtonActivation") { }
 }

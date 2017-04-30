@@ -17,29 +17,30 @@ public class TransformSaver : MonoBehaviour {
         {
             id = gameObject.GetInstanceID(),
             pos = transform.position,
-            rot = transform.rotation.eulerAngles,
-            scale = transform.localScale
+            rot = transform.rotation.eulerAngles.y
         };
+        cache = p;
         string log = JsonUtility.ToJson(b);
         GlobalLogSaver.Instance.AddLogString(log);
         log = JsonUtility.ToJson(p);
         GlobalLogSaver.Instance.AddLogString(log);
     }
-	
-	// Update is called once per frame
+
+    PlayerTransform cache;
+
 	void Update () {
         t += Time.deltaTime;
-        if(t > interval)
+        if(t > interval && ((cache.pos - transform.position).magnitude > 0.1f || Mathf.Abs(transform.eulerAngles.y - cache.rot) > 1))
         {
             PlayerTransform p = new PlayerTransform()
             {
                 id = gameObject.GetInstanceID(),
                 pos = transform.position,
-                rot = transform.rotation.eulerAngles,
-                scale = transform.localScale
+                rot = transform.eulerAngles.y,
             };
             string log = JsonUtility.ToJson(p);
             GlobalLogSaver.Instance.AddLogString(log);
+            cache = p;
             t = 0;
         }
 	}
@@ -59,8 +60,7 @@ class LogObject
 class PlayerTransform : LogObject
 {
     public Vector3 pos;
-    public Vector3 rot;
-    public Vector3 scale;
+    public float rot;
     public int id;
     public PlayerTransform() : base("PlayerTransform") {}
 }

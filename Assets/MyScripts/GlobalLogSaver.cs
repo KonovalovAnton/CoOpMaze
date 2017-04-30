@@ -33,7 +33,7 @@ public class GlobalLogSaver : MonoBehaviour{
         {
             _instance = this;
         }
-        sr = File.CreateText(@"C:\Users\konov_000\Desktop\git thesis\CoOpMaze\Assets\save.txt");        
+        sr = File.CreateText("save.txt");        
     }
 
     private void Update()
