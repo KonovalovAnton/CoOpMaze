@@ -24,15 +24,17 @@ public class SpectatorMovement : MonoBehaviour {
     {
         if(pv.isMine || !PhotonNetwork.connected)
         {
-            rotationX += Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
-            rotationY += Input.GetAxis("Mouse Y") * cameraSensitivity * Time.deltaTime;
+            float horizontal = Input.GetKey(KeyCode.A) ? -1 : Input.GetKey(KeyCode.D) ? 1 : 0;
+            float vertical = Input.GetKey(KeyCode.S) ? -1 : Input.GetKey(KeyCode.W) ? 1 : 0;
+            rotationX += Input.GetAxis("Mouse X") * cameraSensitivity;
+            rotationY += Input.GetAxis("Mouse Y") * cameraSensitivity;
             rotationY = Mathf.Clamp(rotationY, -90, 90);
 
             transform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up);
             transform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.left);
 
-            transform.localPosition += Input.GetAxis("Vertical") * transform.forward * Time.deltaTime * normalMoveSpeed;
-            transform.localPosition += Input.GetAxis("Horizontal") * transform.right * Time.deltaTime * normalMoveSpeed;
+            transform.localPosition += vertical * transform.forward * normalMoveSpeed;
+            transform.localPosition += horizontal * transform.right * normalMoveSpeed;
         }
     }
 }

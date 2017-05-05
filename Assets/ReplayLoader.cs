@@ -33,10 +33,36 @@ public class ReplayLoader : MonoBehaviour {
                 case "CapacitorCharge":
                     logs.Add(JsonUtility.FromJson<CapacitorCharge>(item));
                     break;
+                case "LaserVisuals":
+                    logs.Add(JsonUtility.FromJson<LaserVisuals>(item));
+                    break;
             }
         }
     }
-	
+
+    bool pause = false;
+    public void Pause()
+    {
+        if(!pause)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = GetComponentInChildren<UnityEngine.UI.Slider>().value * 2f;
+        }
+
+        pause = !pause;
+    }
+
+    public void ChangeScale()
+    {
+        if(!pause)
+        {
+            Time.timeScale = GetComponentInChildren<UnityEngine.UI.Slider>().value * 2f;
+        }
+    }
+
 	void Update () {
 		while(pointer < logs.Count && logs[pointer].timeStamp < Time.time)
         {
@@ -53,6 +79,9 @@ public class ReplayLoader : MonoBehaviour {
                     break;
                 case "CapacitorCharge":
                     Capacitor(logs[pointer] as CapacitorCharge);
+                    break;
+                case "LaserVisuals":
+                    Laser(logs[pointer] as LaserVisuals);
                     break;
             }
             pointer++;
@@ -75,6 +104,29 @@ public class ReplayLoader : MonoBehaviour {
         Debug.Log("Pointer: " + pointer +"; Move: " + o.name + "  to " + p.pos);
         o.GetComponent<PlayerReplayComponent>().TargetPos = p.pos;
         o.transform.eulerAngles = new Vector3(o.transform.eulerAngles.x, p.rot, o.transform.eulerAngles.z);
+    }
+
+    void Laser(LaserVisuals lv)
+    {
+        GameObject p = playersDict[lv.id];
+        if (!lv.enable)
+        {
+            LineRenderer[] arr = p.GetComponentsInChildren<LineRenderer>();
+            foreach (var item in arr)
+            {
+                item.enabled = false;
+                //item.SetPositions(null);
+            }
+        }
+        else
+        {
+            LineRenderer[] arr = p.GetComponentsInChildren<LineRenderer>();
+            foreach (var item in arr)
+            {
+                item.enabled = true;
+                item.SetPositions(new Vector3[]{item.transform.position, lv.target});
+            }
+        }
     }
 
     void Capacitor(CapacitorCharge p)

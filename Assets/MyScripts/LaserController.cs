@@ -76,6 +76,7 @@ public class LaserController : MonoBehaviour, IPunObservable
         }
     }
 
+    Vector3 cacheTarget = Vector3.zero;
     void HandleLasers()
     {
         if (!shooting && pressed)
@@ -85,12 +86,31 @@ public class LaserController : MonoBehaviour, IPunObservable
         else if (shooting && !pressed)
         {
             EnableLaser(false);
+            LaserVisuals lv = new LaserVisuals()
+            {
+                id = gameObject.GetInstanceID(),
+                enable = false
+            };
+            string log = JsonUtility.ToJson(lv);
+            GlobalLogSaver.Instance.AddLogString(log);
         }
 
         if (pressed)
         {
             lineR.SetPositions(positionsR);
             lineL.SetPositions(positionsL);
+            if((positionsR[1] - cacheTarget).magnitude > 0.1f)
+            {
+                LaserVisuals lv = new LaserVisuals()
+                {
+                    id = gameObject.GetInstanceID(),
+                    target = positionsR[1],
+                    enable = true
+                };
+                string log = JsonUtility.ToJson(lv);
+                GlobalLogSaver.Instance.AddLogString(log);
+                cacheTarget = positionsR[1];
+            }
         }
     }
 
@@ -109,4 +129,12 @@ public class LaserController : MonoBehaviour, IPunObservable
             positionsL = (Vector3[])stream.ReceiveNext();
         }
     }
+}
+
+class LaserVisuals : LogObject
+{
+    public int id;
+    public Vector3 target;
+    public bool enable;
+    public LaserVisuals() : base("LaserVisuals") { }
 }

@@ -227,8 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47f1e6e8fd031d4da1c3749f81efcb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSensitivity: 90
-  normalMoveSpeed: 10
+  cameraSensitivity: 1
+  normalMoveSpeed: 0.2
 --- !u!114 &114339255857856986
 MonoBehaviour:
   m_ObjectHideFlags: 1
