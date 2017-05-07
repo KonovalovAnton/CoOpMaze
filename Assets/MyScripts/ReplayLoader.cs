@@ -15,7 +15,7 @@ public class ReplayLoader : MonoBehaviour {
 
 	void Start () {
         GameObject.Instantiate(camera, Vector3.zero, Quaternion.identity);
-        string[] lines = System.IO.File.ReadAllLines("save.txt");
+        string[] lines = System.IO.File.ReadAllLines(StartOptions.fileName);
         foreach (var item in lines)
         {
             LogObject l = JsonUtility.FromJson<LogObject>(item);

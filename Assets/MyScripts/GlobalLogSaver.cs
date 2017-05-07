@@ -33,7 +33,16 @@ public class GlobalLogSaver : MonoBehaviour{
         {
             _instance = this;
         }
-        sr = File.CreateText("save.txt");        
+
+        string dir = "replays/";
+        Directory.CreateDirectory(dir);
+
+        string path = System.DateTime.Today.ToShortDateString() + "_" + System.DateTime.Now.ToShortTimeString() + ".txt";
+        path = path.Replace('/', '_');
+        path = path.Replace(':', '_');
+        path = path.Replace(' ', '_');
+        
+        sr = File.CreateText(dir + path);
     }
 
     private void Update()
